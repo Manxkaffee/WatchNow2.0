@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIFunctions">
+   <children>
+      <SplitPane fx:id="topBottomSplit" dividerPositions="0.17839195979899497" layoutX="-1.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="69.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="searchField" layoutX="14.0" layoutY="22.0" promptText="Name of Movie or Show">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="watchButton" disable="true" layoutX="503.0" layoutY="18.0" mnemonicParsing="false" onAction="#openVideo" text="WATCH">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <CheckBox fx:id="includeBS" layoutX="185.0" layoutY="26.0" mnemonicParsing="false" text="include BS" />
+                  <CheckBox fx:id="includeKinoX" layoutX="272.0" layoutY="26.0" mnemonicParsing="false" text="include KinoX" />
+                  <Button fx:id="searchButton" layoutX="407.0" layoutY="18.0" mnemonicParsing="false" onAction="#search" text="Search">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="600.0">
+               <children>
+                  <SplitPane fx:id="leftRightSplit" dividerPositions="0.5" layoutX="-1.0" prefHeight="324.0" prefWidth="600.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ListView fx:id="resultList" fixedCellSize="-3.0" onMouseClicked="#showSelected" prefHeight="322.0" prefWidth="296.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="322.0" prefWidth="296.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <ListView fx:id="episodeList" onMouseClicked="#openStreamList" prefHeight="157.0" prefWidth="294.0" />
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <ListView fx:id="streamList" layoutY="6.0" onMouseClicked="#unlockWatchButton" prefHeight="157.0" prefWidth="294.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
